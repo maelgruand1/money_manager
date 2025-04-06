@@ -7,7 +7,7 @@ import Wallet from './components/Wallet';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/money_manager">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} /> {/* Home est la page d'accueil */}
