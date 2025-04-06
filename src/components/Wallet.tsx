@@ -1,9 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Wallet() {
   const [initialMonth, setInitialMonth] = useState<number>(0);
   const [expenses, setExpenses] = useState<number[]>([]);
   const [isEuro, setIsEuro] = useState<boolean>(false);
+
+  // Charger les données depuis le localStorage au démarrage
+  useEffect(() => {
+    const savedInitialMonth = localStorage.getItem('initialMonth');
+    const savedExpenses = localStorage.getItem('expenses');
+    const savedIsEuro = localStorage.getItem('isEuro');
+
+    if (savedInitialMonth) {
+      setInitialMonth(JSON.parse(savedInitialMonth));
+    }
+    if (savedExpenses) {
+      setExpenses(JSON.parse(savedExpenses));
+    }
+    if (savedIsEuro) {
+      setIsEuro(JSON.parse(savedIsEuro));
+    }
+  }, []);
+
+  // Sauvegarder les données dans le localStorage à chaque changement
+  useEffect(() => {
+    localStorage.setItem('initialMonth', JSON.stringify(initialMonth));
+    localStorage.setItem('expenses', JSON.stringify(expenses));
+    localStorage.setItem('isEuro', JSON.stringify(isEuro));
+  }, [initialMonth, expenses, isEuro]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInitialMonth(parseInt(event.target.value));
