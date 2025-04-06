@@ -1,0 +1,9 @@
+/* Fichier de variables CSS */
+:root {
+  --primary-color: #333;
+  --hover-color: #555;
+  --btn-text-color: white;
+  --background-color: #f4f4f9;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --navbar-height: 60px;
+}

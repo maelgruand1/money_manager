@@ -1,13 +1,273 @@
-body {
+/* index.css */
+
+/* Import des variables */
+@import 'variables.css';
+
+/* Reset les marges et les paddings par défaut */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Applique un fond clair à tout le corps de la page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: #333;
+  min-height: 100vh;
+  padding-top: var(--navbar-height);
+}
+
+/* Style de la barre de navigation */
+.navbar {
+  width: 100%;
+  height: var(--navbar-height);
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Style des boutons de navigation */
+.navBtn {
+  color: var(--btn-text-color);
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hover des boutons */
+.navBtn:hover {
+  background-color: var(--hover-color);
+}
+
+/* Mise en page des titres */
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Conteneur général de page */
+.page-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Home */
+.home-page {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+/* Wallet */
+.wallet-page {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  margin-top: 20px;
+}
+
+/* About */
+.about-page {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Paragraphe principal */
+.paraph {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Auteur */
+.author {
+  font-style: italic;
+  color: #666;
+  margin-top: 20px;
+}
+
+/* Version */
+.version {
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Pour les utilisateurs sans JavaScript */
+noscript {
+  color: red;
+  font-weight: bold;
+  display: block;
+  margin-top: 30px;
+}
+
+/* Media Queries - Responsive */
+
+/* Petits téléphones (jusqu’à 480px) */
+@media (max-width: 480px) {
+  body {
+    padding-top: 60px; /* Réduction du décalage dû à la navbar */
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .navBtn {
+    font-size: 13px;
+    padding: 6px 12px;
+    margin: 6px 0;
+  }
+
+  .page-container,
+  .home-page,
+  .wallet-page,
+  .about-page {
+    padding: 10px;
+  }
+
+  .about-page {
+    padding: 20px;
+  }
+}
+
+/* Téléphones et petits appareils (481px à 767px) */
+@media (max-width: 767px) {
+  body {
+    padding-top: 60px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .navBtn {
+    margin: 10px 0;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}
+
+/* Tablettes en mode portrait (768px à 991px) */
+@media (max-width: 991px) {
+  .page-container,
+  .home-page,
+  .wallet-page,
+  .about-page {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
+
+/* Petits laptops (992px à 1199px) */
+@media (max-width: 1199px) {
+  .navBtn {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+}
+
+/* Très grands écrans (au-delà de 1600px) */
+@media (min-width: 1600px) {
+  .page-container {
+    max-width: 1200px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .navBtn {
+    font-size: 18px;
+  }
+}
+/* Très petits téléphones (jusqu’à 320px) */
+@media (max-width: 320px) {
+  body {
+    padding-top: 150px; /* Navbar encore plus fine sur ces petits écrans */
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 8px 0;
+  }
+
+  .navBtn {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin: 5px 0;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .page-container,
+  .home-page,
+  .wallet-page,
+  .about-page {
+    padding: 8px;
+  }
+
+  .paraph {
+    font-size: 16px;
+  }
+
+  .about-page {
+    padding: 12px;
+
+  }
+  .about-page img {
+  width: 15rem;
+  height: 6rem;
+  max-width: 100%;
+  height: auto;
+}
+
+
 }

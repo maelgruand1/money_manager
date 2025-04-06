@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Money Manager",
+  "name": "Money Manager | Web Version",
+  "version":"0.1.0",
   "icons": [
     {
       "src": "favicon.ico",
@@ -19,7 +20,10 @@
     }
   ],
   "start_url": ".",
+  "id": "/money_manager/",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "author":"Mael Gruand"
+
 }
