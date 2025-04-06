@@ -56,7 +56,7 @@ function Wallet() {
 
   return (
     <div className='wallet-page'>
-      <h1>Wallet Page</h1>
+      <h1>Wallet</h1>
       <noscript>To see this application, you need JavaScript enabled</noscript>
 
       <label htmlFor="initialMonth">Total for Month in $</label>
