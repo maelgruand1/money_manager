@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
-import Wallet from './Wallet'; // Assurez-vous d'importer Wallet
+import Wallet from './Wallet';
 
 function Home() {
-  const [initialMonth, setInitialMonth] = useState<number>(0);
+  const [showWallet, setShowWallet] = useState(false);
+
+  const handleClick = () => {
+    setShowWallet(true);
+  };
 
   return (
-    <div className="home-page">
+    <div className='home-page'>
       <h1>Money Manager</h1>
       <p>Welcome! Manage your expenses and income easily with this app.</p>
       <noscript>To see this application, you need JavaScript enabled</noscript>
+      <button onClick={handleClick}>Go to Wallet</button>
 
-      {/* Passe la fonction setInitialMonth à Wallet */}
-      <Wallet setInitialMonth={setInitialMonth} />
-      
-      {/* Affiche la valeur actuelle de initialMonth */}
-      <p id="seeTot">{`Initial value of the month: ${initialMonth}`}</p>
+      {showWallet && <Wallet />}
     </div>
   );
 }
