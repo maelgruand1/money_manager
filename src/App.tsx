@@ -10,13 +10,12 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/wallet" element={<Wallet />} />
+        <Route path="/" element={<Home />} /> {/* Home est la page d'accueil */}
+        <Route path="/wallet" element={<Wallet />} /> {/* Wallet est accessible via /wallet */}
         <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   );
 }
-
 
 export default App;

@@ -12,11 +12,12 @@
 
 /* Applique un fond clair à tout le corps de la page */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   background-color: var(--background-color);
   color: #333;
   min-height: 100vh;
   padding-top: var(--navbar-height);
+  line-height: 1.6;
 }
 
 /* Style de la barre de navigation */
@@ -32,6 +33,7 @@ body {
   top: 0;
   left: 0;
   z-index: 1000;
+  padding: 0 10px;
 }
 
 /* Style des boutons de navigation */
@@ -42,7 +44,7 @@ body {
   margin: 0 15px;
   font-size: 16px;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -51,12 +53,14 @@ body {
 /* Hover des boutons */
 .navBtn:hover {
   background-color: var(--hover-color);
+  transform: scale(1.1);
 }
 
 /* Mise en page des titres */
 h1 {
   font-size: 36px;
   margin-bottom: 20px;
+  color: var(--text-color);
 }
 
 /* Conteneur général de page */
@@ -64,6 +68,9 @@ h1 {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
+  background-color: var(--container-bg);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
 }
 
 /* Home */
@@ -103,6 +110,7 @@ h1 {
   font-size: 18px;
   margin-bottom: 20px;
   color: #444;
+  line-height: 1.7;
 }
 
 /* Auteur */
@@ -132,7 +140,7 @@ noscript {
 /* Petits téléphones (jusqu’à 480px) */
 @media (max-width: 480px) {
   body {
-    padding-top: 60px; /* Réduction du décalage dû à la navbar */
+    padding-top: 60px;
   }
 
   .navbar {
@@ -225,10 +233,11 @@ noscript {
     font-size: 18px;
   }
 }
+
 /* Très petits téléphones (jusqu’à 320px) */
 @media (max-width: 320px) {
   body {
-    padding-top: 150px; /* Navbar encore plus fine sur ces petits écrans */
+    padding-top: 150px;
   }
 
   .navbar {
@@ -260,14 +269,137 @@ noscript {
 
   .about-page {
     padding: 12px;
-
   }
+
   .about-page img {
-  width: 15rem;
-  height: 6rem;
-  max-width: 100%;
-  height: auto;
+    width: 15rem;
+    height: 6rem;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
+/* Wallet Page Specific Styles */
+.wallet-page {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
 
+.wallet-page h1 {
+  font-size: 36px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.wallet-page label {
+  font-size: 16px;
+  color: #444;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.wallet-page input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  width: 60%;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.wallet-page input[type="number"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.wallet-page button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 10px 0;
+}
+
+.wallet-page button:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+}
+
+.wallet-page h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.wallet-page ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.wallet-page ul li {
+  font-size: 18px;
+  color: #444;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.wallet-page ul li:last-child {
+  border-bottom: none;
+}
+
+.wallet-page .month {
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Responsive Styles for Wallet Page */
+
+/* Petits téléphones (jusqu’à 480px) */
+@media (max-width: 480px) {
+  .wallet-page input[type="number"] {
+    width: 80%;
+  }
+
+  .wallet-page button {
+    width: 100%;
+  }
+
+  .wallet-page h1 {
+    font-size: 28px;
+  }
+
+  .wallet-page h2 {
+    font-size: 24px;
+  }
+
+  .wallet-page ul li {
+    font-size: 16px;
+  }
+}
+
+/* Téléphones et petits appareils (481px à 767px) */
+@media (max-width: 767px) {
+  .wallet-page input[type="number"] {
+    width: 70%;
+  }
+
+  .wallet-page h1 {
+    font-size: 32px;
+  }
+
+  .wallet-page h2 {
+    font-size: 26px;
+  }
 }
