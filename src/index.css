@@ -16,7 +16,7 @@ body {
   background-color: var(--background-color);
   color: #333;
   min-height: 100vh;
-  padding-top: var(--navbar-height); /* Décale tout sous la navbar */
+  padding-top: var(--navbar-height);
 }
 
 /* Style de la barre de navigation */
@@ -59,7 +59,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Conteneur général de page (optionnel) */
+/* Conteneur général de page */
 .page-container {
   padding: 20px;
   max-width: 800px;
@@ -78,7 +78,6 @@ h1 {
 /* Wallet */
 .wallet-page {
   text-align: center;
-  
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
@@ -128,14 +127,144 @@ noscript {
   margin-top: 30px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Media Queries - Responsive */
+
+/* Petits téléphones (jusqu’à 480px) */
+@media (max-width: 480px) {
+  body {
+    padding-top: 60px; /* Réduction du décalage dû à la navbar */
+  }
+
   .navbar {
     flex-direction: column;
     height: auto;
+    padding: 10px 0;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .navBtn {
+    font-size: 13px;
+    padding: 6px 12px;
+    margin: 6px 0;
+  }
+
+  .page-container,
+  .home-page,
+  .wallet-page,
+  .about-page {
+    padding: 10px;
+  }
+
+  .about-page {
+    padding: 20px;
+  }
+}
+
+/* Téléphones et petits appareils (481px à 767px) */
+@media (max-width: 767px) {
+  body {
+    padding-top: 60px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
   }
 
   .navBtn {
     margin: 10px 0;
+    font-size: 14px;
+    padding: 8px 16px;
   }
+
+  h1 {
+    font-size: 28px;
+  }
+}
+
+/* Tablettes en mode portrait (768px à 991px) */
+@media (max-width: 991px) {
+  .page-container,
+  .home-page,
+  .wallet-page,
+  .about-page {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+}
+
+/* Petits laptops (992px à 1199px) */
+@media (max-width: 1199px) {
+  .navBtn {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+}
+
+/* Très grands écrans (au-delà de 1600px) */
+@media (min-width: 1600px) {
+  .page-container {
+    max-width: 1200px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .navBtn {
+    font-size: 18px;
+  }
+}
+/* Très petits téléphones (jusqu’à 320px) */
+@media (max-width: 320px) {
+  body {
+    padding-top: 150px; /* Navbar encore plus fine sur ces petits écrans */
+  }
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 8px 0;
+  }
+
+  .navBtn {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin: 5px 0;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .page-container,
+  .home-page,
+  .wallet-page,
+  .about-page {
+    padding: 8px;
+  }
+
+  .paraph {
+    font-size: 16px;
+  }
+
+  .about-page {
+    padding: 12px;
+
+  }
+  .about-page img {
+    width: 15rem;
+    height: 6rem;
+  }
+
 }
