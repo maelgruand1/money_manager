@@ -31,7 +31,6 @@ body {
   box-shadow: var(--box-shadow);
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 1000;
   padding: 0 10px;
 }
@@ -402,4 +401,15 @@ noscript {
   .wallet-page h2 {
     font-size: 26px;
   }
+}
+
+.listSocials{
+  list-style: none;
+
+}
+.listSocials img {
+  width: 5rem;
+  height: 5rem;
+  max-width: 50%;
+  height: auto;
 }
