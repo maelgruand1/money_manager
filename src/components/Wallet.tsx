@@ -53,7 +53,7 @@ function Wallet({}: WalletProps) {
       setInitialMonth(value === '' ? 0 : parseInt(value, 10));
     }
   };
-
+ 
   const handleAddExpense = () => {
     const expenseInput = prompt("Enter expense amount in dollars:");
     if (expenseInput && !isNaN(Number(expenseInput))) {
