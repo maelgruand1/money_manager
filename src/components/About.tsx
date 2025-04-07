@@ -3,7 +3,7 @@ import icon from './images/tsReactIcon.png';
 import faGithub from './images/iconGithub.png';
 import faLinkedin from './images/iconLinkedin.png';
 
-const version : string = "0.1";
+const version : string = "0.2";
 const author : string = "Mael Gruand";
 function About(){
     return (
